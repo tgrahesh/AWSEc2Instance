@@ -1,0 +1,42 @@
+LAMP STACK IMPLEMENTATION IN AWS
+
+-Click on "Services" at the upper left corner and Click on "EC2"
+select ec2 stroll down, and Click on "Launch Instance.
+Launch a new "EC2" instance of t2.micro family with Ubuntu Server 22.04 LTS(HVM) 64 bit
+Configure Security Group and inbound, outbound rules , allow SSH,http and https default ports.
+create a new key-pair, and download as.ppk
+
+connect my instance to an SSH Client(PUTTY)
+
+I opened my PUTTY, I clicked on SESSION, SSH, on the REMOTE HOST i pasted my public-ip address which i copied from my AWS instance
+Next i clicked on SSH settings, i checked the box for private key, and i browse my downloaded .ppk file and next i clicked on OK
+
+STEP 1- Installing Apache and Updating the Firewall
+
+Run below commands
+-> sudo apt update
+-> sudo apt install apache2
+
+Verify installation
+-> sudo systemctl status apache2
+
+Open a web browser to check if Apache server got installed
+http://<AWS instance-Public-ip-address>:80
+
+STEP 2 - Installing MySQL
+
+-> sudo apt -y install mysql-server
+script to remove some insecure default settings and lockdown access to our database system.
+-> sudo mysql_secure_installation
+test if you're able to login to the MySQL Console by typing below command
+-> sudo mysql
+exit the MySQL Console
+-> mysql> exit
+
+Step 3 — Installing PHP
+In addition to the php package, we’ll need php-mysql, a PHP module that allows PHP to communicate with MySQL-based databases. We’ll also need libapache2-mod-php to enable Apache to handle PHP files. Core PHP packages will automatically be installed as dependencies.
+To install these 3 packages at once, run:
+-> sudo apt -y install php libapache2-mod-php php-mysql
+
+run the following command to confirm your PHP version:
+-> php -v
