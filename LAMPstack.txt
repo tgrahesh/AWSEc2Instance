@@ -40,3 +40,4 @@ To install these 3 packages at once, run:
 
 run the following command to confirm your PHP version:
 -> php -v
+->
