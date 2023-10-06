@@ -1,0 +1,9 @@
+Define log directory and backup directory
+Define a log file and backup prefix
+Define retention period in days
+Check if backup directory exists and Create backup directory if it doesn't exist
+Calculate the date for log rotation by subtracting RETENTION_DAYS
+Check if the log file exists
+if current date not equals to rotate date then copy log directory log file to backup directory backup file
+compress the log files
+Delete old backup files that exceed the retention period
