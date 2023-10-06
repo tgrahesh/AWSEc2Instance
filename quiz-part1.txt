@@ -1,0 +1,304 @@
+AWS Services:
+
+ • What is AWS, and what are its core services?
+
+AWS is widely-used cloud computing platform to provide scalable, flexible, and cost-effective solutions for businesses of all sizes. It enables organizations to build and deploy a wide variety of applications and workloads in the cloud.
+Core services:
+Amazon EC2
+Amazon RDS
+Amazon VPC
+Amazon Route 53
+AWS CloudWatch
+
+
+ • Explain the key components of an AWS Virtual Private Cloud (VPC).
+Subnets,route tables,internet gateway,security groups
+
+ • How does Amazon S3 work, and what are its use cases? 
+its a reliable storage service that allows you to store and manage data in the cloud and it provides logging and monitoring capabilities 
+Usecases:
+Data Backup and Recovery
+Static Website Hosting
+Data Lake
+Data Backup and Restore
+Store log files
+Data migration
+
+• What is AWS Lambda, and how is it used in serverless computing? 
+It is  a serverless compute service provided by Amazon Web Services (AWS) which  allows  to run code without the need to provision or manage servers.
+
+Its used in serverless computing by below ways
+
+	• It abstracts the underlying infrastructure and enables developers to focus  on writing code to achieve a specific task 
+	• We can write the code that runs in a Lambda function, defining the logic we want to execute when an event occurs
+	• It can be integrated with other AWS services and supports a variety of programming languages, and its  a pay as you go model
+
+•Describe the differences between AWS EC2 and AWS ECS. 
+Ec2 is virtual machines or instances that you can configure and manage. 
+ECS is a container orchestration service that allows to run and manage Docker containers.
+
+
+• What is AWS Elastic Load Balancing (ELB), and what types of load balancers does AWS offer?
+It helps to share or distribute incoming network traffic across different Amazon EC2 instances, containers and different IP addresses to ensure high availability of applications
+Application Load Balancer
+Network Load Balancer
+Classic Load Balancer
+
+
+ • Explain the purpose of Amazon RDS and its benefits. 
+Its a relational database service provided by Amazon Web Services (AWS). Its primary purpose is to simplify the setup, operation, and scaling of relational databases, making it easier for developers to build and manage database-backed applications like MySQL, PostgreSQL, Oracle, SQL Server.
+benefits
+Managed Database Service
+High Availability
+Automatic Backups
+Scalablity
+Security
+
+• What is AWS CloudFormation, and how is it used for infrastructure as code (IaC)? 
+Its used for creation and management of AWS resources which allows you to define your AWS infrastructure, including resources, dependencies, and configurations
+
+By using AWS CloudFormation, you can treat your infrastructure as code, apply software development best practices, and achieve repeatability, consistency, and automation in your infrastructure management processes. 
+
+• What are AWS Identity and Access Management (IAM) roles, and why are they important? 
+It is used for controlling access to AWS resources and services . Its important to provide security
+Thereby we can protect our AWS environment
+
+• How does Amazon Route 53 facilitate DNS management in AWS
+ Amazon Route 53 is a service provided by AWS to manage domain name systems and provides DNS services and routes internet traffic
+
+Linux Fundamentals:
+
+ • Describe the Linux kernel and its role in the operating system. 
+Linux kernel is a bridge between software applications and the hardware of a computer.
+
+• Explain the differences between a process and a thread in Linux. 
+Process is a independent programm
+Thread is a light weight process
+
+• What is the purpose of the /etc/passwd file in Linux? 
+It’s a important file system that stores user account information like username,password
+
+• How do you set file permissions in Linux using chmod?
+chmod u+x filename
+chmod 755 filename
+
+ • What is the significance of the /etc/hostname file in Linux? 
+Its used to set and manage hostname of linux systems.
+
+• How can you find the IP address of a Linux machine using command-line tools? 
+ipconfig
+
+• Describe the purpose of the cron service in Linux. 
+Schedule scripts to run  and automate the process at specific duration or time.
+
+• What is an inode in Linux, and why is it important for file systems?
+It represents file or directory.its important to get the full details of file or directory
+
+ • How do you search for text within files in Linux using the grep command?
+grep "text" filename.txt 
+
+ • Explain the concept of symbolic links (symlinks) in Linux.
+It’s a dangling link that points to non existent data and it can also link to directories and cross file system boundaries
+
+Bash Scripting:
+
+ • What is a shebang (#!) line in a Bash script, and why is it used? 
+   we use Shebang line in beginning of the script to specify system about the interpreter
+
+• How do you declare and use variables in Bash scripts? 
+ We can declare
+ name = Grahesh.
+ To use - $name
+
+• Explain the purpose of control structures like if statements and loops in Bash. 
+ The purpose of if statement is to check conditions and loops in bash for repetitive process to execute the code
+
+• What is command substitution in Bash, and how is it performed? 
+ $(top). Here top is the command.
+
+• How can you pass command-line arguments to a Bash script?
+  ./scriptname.sh commandlinearguements
+ Example - ./scriptname.sh arg1
+
+ • Describe the purpose of the case statement in Bash. 
+The primary purpose of the case statement in Bash is to treamline decision-making in shell scripts and to evaluate multiple conditions
+
+• What is the role of functions in Bash scripts, and how are they defined? 
+   The role of function is to understand the script easily and we can reuse whenever we need.
+   They defined as Function()_name
+
+• How can you handle errors and exceptions in Bash scripts? 
+ 
+   We can handle errors by implementing logs ,some conditional statements like if statement,debugging statements(set -x) 
+
+• Explain the concept of environment variables in Bash. 
+Configuring shell environement and for shell scripts
+
+• What is process substitution in Bash, and when is it useful?
+Its used to read the commands or values from  a file
+
+AWS and Linux Networking: 
+
+
+• How can you establish secure communication between AWS resources in different VPCs? 
+	• You can use AWS VPN services (such as AWS Site-to-Site VPN or AWS Client VPN) to establish secure encrypted connections between VPCs and on-premises networks.
+	• AWS Direct Connect provides dedicated, private network connections between your on-premises data center and AWS.
+	• VPC peering allows you to connect two VPCs together, enabling communication between resources in different VPCs as if they were on the same network.
+
+• What is AWS Direct Connect, and how does it enhance network connectivity? 
+AWS Direct Connect provides dedicated, private network connections between your on-premises data center and AWS.
+Enhancing network connectivity by
+	• Direct Connect provides dedicated, private network links that are not exposed to the public internet.
+	• You can control traffic using VPC route tables, Security Groups, and Network ACLs.
+
+
+• Explain the differences between AWS Network ACLs and Security Groups. 
+	• Security Groups are generally used for control at the instance level and are stateful
+	• Network ACLs are used for controlling traffic at the subnet level and are stateless. 
+
+• How do you troubleshoot network connectivity issues in a Linux environment? 
+ 
+	• Ping Local Hosts using ping command
+	• Check Network Interface Status using ipconfig
+	• Check DNS Resolution using nslookup example.com
+	• Check Default Gateway by using the ip route command
+	• Review your firewall rules using iptables or firewalld to ensure they are not blocking the desired traffic
+	• ip route command to check the routing tables
+	• check for network-specific logs (/var/log/daemon.log or /var/log/network.log) for error messages
+	• Restart networking services using commands like systemctl restart networking or systemctl restart NetworkManager.
+	• reboot your Linux system
+
+• What is an Elastic IP address in AWS, and why might you use it? 
+ Elastic IP address is a static IP address where we can allocate to AWS resources
+
+• Describe the purpose of the /etc/hosts file in Linux networking. 
+It’s a file system used to map hostnames to Ip adresses
+
+• How can you configure a static IP address on a Linux server? 
+ Firstly we have to go to Elastic IP and then click on allocate and select the EC2 instance which we have created and click associate
+
+• Explain the role of iptables in Linux firewall configuration. 
+It is a tool for securing and managing network traffic on Linux systems.
+And is used for configuring the firewall on Linux systems, helping control network traffic and enhance security.
+
+• What is the purpose of the AWS VPN service, and how is it set up? 
+purpose of AWS VPN services is to provide secure and private network communication between your AWS resources and your on-premises or other AWS resources, ensuring data confidentiality and integrity.
+1. AWS Site-to-Site VPN:
+Purpose:
+AWS Site-to-Site VPN is used to establish secure, encrypted connections between your on-premises data center or network and your VPC in AWS.
+Setup:
+	• To set up AWS Site-to-Site VPN, you need to configure a Customer Gateway (CGW) on your on-premises side and a Virtual Private Gateway (VGW) on the AWS side.
+	• Create a VPN Connection between the CGW and VGW, specifying encryption and routing options.
+	• Configure appropriate routes and security policies on both sides to control traffic flow.
+	• Establish and monitor the VPN tunnel, ensuring that it's operational.
+2. AWS Client VPN:
+Purpose:
+AWS Client VPN is used to provide secure, remote access to your AWS resources for remote users or remote office locations.
+Setup:
+	• Create a Client VPN endpoint within your VPC.
+	• Define client authentication methods, such as using Active Directory, mutual authentication with certificates, or AWS Directory Service.
+	• Specify authorization rules to control which resources clients can access.
+	• Distribute the VPN client software to remote users, which can be downloaded from the AWS Client VPN endpoint.
+	• Clients use the VPN client software to establish secure connections to the Client VPN endpoint.
+
+• How do you configure a network interface in Linux using the ifconfig command? 
+Ifconfig Command - It is a command  to configure the network ifconfig <Ip address>
+
+Advanced AWS Services:
+
+ • What is AWS Elastic Beanstalk, and how does it simplify application deployment? 
+
+It is a Platform-as-a-Service (PaaS) offering from Amazon Web Services (AWS) that simplifies the deployment, scaling, and management of web applications and services
+How?
+	•  supports multiple programming languages and platforms,
+	• When you deploy your application to Elastic Beanstalk, it automatically provisions the necessary infrastructure resources, including Amazon EC2 instances, load balancers, auto-scaling groups, and networking components. You don't need to manually configure servers or manage network settings.
+	• sets up load balancing and auto-scaling for your application
+	• Beanstalk integrates with AWS CloudWatch for monitoring and logging.
+
+• Describe the features and use cases of AWS Lambda Layers. 
+It is a powerful mechanism for managing and sharing code and resources across Lambda functions, improving code reuse, reducing deployment package size, and simplifying resource management. They are particularly useful in scenarios where consistency, version control, and separation of concerns are important considerations.
+
+• What is AWS Elastic Container Service for Kubernetes (EKS), and how does it differ from ECS? 
+EKS uses Kubernetes as its container orchestration engine. 
+ECS uses its proprietary orchestration engine, which is designed specifically for AWS.
+Diff:
+EKS is well-suited for users who require the advanced features of Kubernetes, while ECS offers simplicity and tight integration with AWS services for more straightforward use cases.
+
+• How can you set up autoscaling in AWS to handle fluctuating traffic? 
+by using AWS Auto Scaling service
+
+Log in to the AWS Management Console
+Select the Auto Scaling service
+Create a Launch Configuration
+Create an Autoscaling Group
+Configure the details of your autoscaling group, including the group name, network settings, and subnets.
+Configure scaling policies based on your application's requirements.
+Set the initial capacity and desired capacity.
+configure CloudWatch Alarms
+You can simulate traffic spikes by generating load on your application or manually trigger scaling actions to see if new instances are launched or terminated as needed.
+
+
+• Describe AWS Lambda@Edge and its role in serverless computing.
+AWS Lambda@Edge is a service offered by Amazon Web Services (AWS) that extends the capabilities of AWS Lambda to run code in response to CloudFront events.
+AWS Lambda is a core service in the AWS serverless ecosystem, and Lambda@Edge extends this functionality to the edge locations.AWS Lambda@Edge is a powerful service that brings serverless computing to the edge locations of AWS's content delivery network. It enables real-time processing, dynamic content generation, security enforcement, and more, all while reducing latency and improving the performance of your web applications and content delivery. This service is particularly useful for optimizing user experiences and securing web applications.  
+
+ • How can you secure AWS resources using AWS Identity and Access Management (IAM) policies? 
+ We can create different security groups in access management policies and we can give permission to the role or person and we can give access to either read or modify
+
+• What is AWS Kinesis, and how can it be used for real-time data streaming? 
+AWS Kinesis is a suite of managed services provided by Amazon Web Services (AWS) for real-time data streaming and analytics. It enables you to ingest, process, and analyze large volumes of streaming data in real-time, making it a powerful tool for various use cases, including real-time analytics, log processing, monitoring, and more.
+
+There are 3 types of services
+Amazon Kinesis Streams
+Amazon Kinesis Firehose
+Amazon Kinesis Analytics
+
+AWS Kinesis is a suite of services designed to handle real-time data streaming and analytics use cases. It allows organizations to ingest, process, and analyze streaming data at scale, enabling real-time insights and actions for a wide range of applications and industries.
+
+• How do you optimize costs in AWS using features like AWS Trusted Advisor? 
+ Enable AWS Trusted advisor under the aws management console, we can set the plans , budgets inorder to optimize the costs.
+
+Advanced Linux and Bash Scripting: 
+
+• Explain the differences between hard links and symbolic links in Linux. 
+  Difference between hard links and symbolic links in linux are
+  Hard links cant cross file system boundries
+  Symbolic links can cross file system boundries
+
+• How do you create a Bash script that runs as a daemon (background process)? 
+#!/bin/bash
+
+while true; do
+    top
+    sleep 10  
+done
+
+Save the script as .sh and make it executable
+Run the command - nohup ./daemon.sh > daemon.log 2>&1 &
+
+• Describe the purpose of process groups and sessions in Linux. 
+Process groups are used to organize related processes into a single unit called a "process group.".and they are also used for grouping related processes, enabling job control, and facilitating signal delivery within a group of processes.
+
+Sessions are used to group multiple process groups together and provide a higher-level unit for controlling related sets of processes.
+Sessions are a higher-level grouping of process groups, primarily used for managing terminal access, controlling terminal signals, and handling terminal disconnections. Sessions often correspond to user login sessions.
+
+
+• What is the purpose of the nohup command in Linux, and how does it work? 
+Its used to run the scripts or commands in the background without having the terminal opened.
+
+• How can you monitor system performance and resource utilization using Linux command-line tools? 
+We have one popular command known as "top"
+
+• What is the role of chroot in Linux, and how can it be used for security? 
+  It is a security module and it help in process to change the apparent directory 
+
+• Explain the concept of Linux containers and containerization technologies like Docker. 
+
+Docker is a popularly used for Container where we can store in multiple containers. We can store either in one container or multiple containers which is known as containerization
+
+• How can you automate backups of critical data in a Linux environment using Bash scripts? 
+
+• Describe the use of the rsync command for efficient file synchronization in Linux. 
+rysnc is used to synchronize files and directories over a network.
+• How do you use regular expressions (regex) in Bash scripts for text pattern matching
+grep "regexpression" filename.txt
