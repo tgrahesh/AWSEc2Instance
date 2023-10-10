@@ -1,0 +1,16 @@
+Highly Available Web Application Deployment Documentation:
+	• Create VPC
+	• Create Internet Gateway and attach to created VPC
+	• Create subnets (2 for ALB and one for application in multiple availability zones)
+	• Update route table by adding internet gateway to all the subnets
+	• Create application load balancer
+		○ Choose our VPC under network
+		○ Choose 2 subnets in diff availability zones
+		○ Create security group and Add security group to our VPC to allow http traffic
+		○ Create target group under listeners and routing
+	• Create ec2 instance and install all required software(take that as an AMI)
+	• Now create a launch template, choose the created AMI and click create
+	• Create Autoscaling group, attach the launch template ,provide min, max, desired insatnces, attach target group and provide the scaling policy as dynamic policy (rule =average CPU utilization percentage >90)
+Testing Autoscaling Group:
+	• provide the endpoint of Load Balancer and validate the request in postman
+	• Create a test to generate more traffic and check if the instances are getting auto scaled based on the scaling policies
