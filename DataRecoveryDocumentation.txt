@@ -1,0 +1,11 @@
+Data Backup and Disaster Recovery Plan:
+	• Go to AWS backup service 
+	• Created a backup plan in AWS 
+		○ Created an RDS MySQL DB instance and connected to my DB through MySQL work bench client and created few SQL queries 
+		○ Created backup rule where we can mention our backup frequency if it is daily, weekly, time duration,
+		○ Assign the resources where i assigned my ec2 instance, EBS volume, my RDS MySQL instance
+		○ Backup was successfully got completed for all the assigned resources
+	• Enabled versioning under bucket properties tab for my s3 bucket
+	• Added lifecycle rules under bucket management tab gave storage class for object transition and expiration  rules
+	• Added Configured cross region replication under bucket management tab by adding cross region replication rules and by creating bucket in another region , and gave all the details while creating the cross region replication configuration.
+I have validated by uploading a object in s3 bucket and my objected and backing up to my destination region
